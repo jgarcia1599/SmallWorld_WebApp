@@ -1,0 +1,73 @@
+.alignStuff {
+  text-align: center;
+  padding-bottom: 15px;
+ }
+
+
+ .navbar {
+   background-color: white;
+   padding-bottom: 0;
+ }
+ .involve {
+   align-items: center;
+   text-align: center;
+   padding: 20px auto auto 40px;
+ }
+.alignStuff h3, .alignStuff p, .alignStuff button {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+footer {
+  background-color: gray;
+}
+
+.jumbotron {
+  height: 800px;
+  margin-bottom: 0;
+}
+.big {
+  margin-top: 500px;
+  margin-left: 0;
+  padding: 15px 15px 15px 10px;
+  background-color: gray;
+}
+.bigPicRight img, .bigPicLeft img{
+  height: 350px;
+  justify-content: flex-end;
+}
+.bigPicRight {
+text-align: right;
+}
+.bigPicLeft {
+text-align: left;
+}
+.contents {
+  padding-bottom: 50px;
+}
+/* .lead {
+  margin-left: 0;
+  padding-left: 0;
+} */
+.leftBorder {
+  border-left-style: solid;
+  border-right-style: solid;
+  padding: 30px 0px 20px 0px;
+
+}
+.aboutHeader {
+  padding-bottom: 20px;
+}
+/*resiter page content*/
+.bigRegister {
+  margin-top: 100px;
+
+}
+.jumbotronRegister {
+  height: 400px;
+}
+.specify {
+  text-align: center;
+  padding-top: 50px;
+}
+/*register mentor page */

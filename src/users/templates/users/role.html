@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+{% block content1 %}
+
+
+
+<div class="mission-home">
+        <div class="row">
+    <div class="mycontainer">
+            <section id="section2">
+                <div class="alignStuff">
+                    <h4 class="h4-norm ourmission">Join us today.</h4>
+          </div>
+        </div>
+      </div>
+</div>
+
+  <div class="row">
+    <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+                    <h5> Welcome to the SmallWorld network! </h5>
+                        <h5>To create an account, please choose from below: </h5>
+            </section>
+          </div>
+        </div>
+      </div>
+
+
+  <div class="row">
+    <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+                   <button class="button-normal"> <a href="{% url 'users:signup-student' %}">I'm a student</a></button>
+                     <button class="button-normal"> <a href="{% url 'users:signup-mentor' %}">I'm a mentor.</a></button>
+                  <!--  <button class="button-normal"> <a href="#">I'm a non-profit.</a></button>-->
+            </section>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+{% endblock %}

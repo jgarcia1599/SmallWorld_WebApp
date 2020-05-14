@@ -1,0 +1,75 @@
+
+{% extends 'home/base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href= "{% static 'css/style3.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Karla" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="scroll-down.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+{% block content %}
+<!--use bootstrap panels or list groups or collapsible-->
+<div class="meetingScreen">
+    {% if user.is_authenticated %}
+    {% if user.is_student %}
+        {% if user.student.teamstudent %}
+    <ul>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='1' %}">Meeting 1</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='2' %}">Meeting 2</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='3' %}">Meeting 3</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='4' %}">Meeting 4</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='5' %}">Meeting 5</a></li>
+    </ul>
+        {% else %}
+         <div class="row">
+        <div class="mycontainer">
+               <section id="section3">
+                    <div class="alignStuff">
+                        <h5> Join a team now!</h5>
+                        <a href="{% url 'TeamMap:index' %}">Explore all teams.</a>
+                    </div>
+               </section>
+            </div>
+          </div>
+        {% endif %}
+    {% elif user.is_mentor %}
+        {% if user.mentor.team %}
+    <ul>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='1' %}">Meeting 1</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='2' %}">Meeting 2</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='3' %}">Meeting 3</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='4' %}">Meeting 4</a></li>
+        <li><a href="{% url 'meetings:user_meeting_initial' pk='5' %}">Meeting 5</a></li>
+    </ul>
+
+    <a href="{% url 'TeamMap:team-update' pk=user.mentor.team.pk %}"> Publish Team Profile</a>
+
+        {% else %}
+            <div class="row">
+                <div class="mycontainer">
+                    <div class="alignStuff">
+                        <a href="{% url 'TeamMap:team-add' %}">Create a Team!</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endif %}
+    {% endif %}
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

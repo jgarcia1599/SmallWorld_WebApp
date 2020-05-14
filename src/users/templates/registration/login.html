@@ -1,0 +1,33 @@
+
+
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+{% block content1 %}
+  {% if form.non_field_errors %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {% for error in form.non_field_errors %}
+        <p>{% if forloop.last %}{% endif %}{{ error }}</p>
+      {% endfor %}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endif %}
+
+
+  <div class="row">
+   <div class="col-md-4 col-lg-offset-4">
+      <h5>log in.</h5>
+      <form method="post" novalidate>
+        {% csrf_token %}
+          <input type="hidden" name="next" value="{{ next }}">
+        {{ form.username }}
+        {{ form.password }}
+        <br>
+        <button type="submit" class="button-normal-2">Submit</button>
+      </form>
+       <br>
+          <br>
+    </div>
+  </div>
+{% endblock %}

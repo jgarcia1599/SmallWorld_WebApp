@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href= "{% static 'css/style3.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Karla" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
+
+<!-- Add font awesome icons -->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Small World | Home</title>
+  </head>
+
+{% if user.is_authenticated %}
+ <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+       <div class="navbar-header">
+         <a class="navbar-brand" href="{% url 'home:home' %}"><img  src="{% static 'img/sw_logo_3.png' %}"></a>
+       </div>
+      <div class="container">
+        <div class="float-left" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about:about' %}">WORK BASE</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact:contact' %}"> IDEAS</a>
+              </li>
+          </ul>
+        </div>
+
+        <ul class="navbar-nav ml-auto nav-left">
+            <div class="dropdown">
+                <a  class="nav-link">{{ user.username }}</a>
+                <div class="dropdown-content">
+                    <a class="nav-link" href="{% url 'logout' %}"> Logout </a>
+                    <a class="nav-link" href="{% url 'users:user_profile' %}"> My Profile </a>
+                    <a class="nav-link" href="{% url 'TeamMap:index' %}"> Team Profile</a>
+                    <a class="nav-link" href="#"> Past Teams </a>
+                </div>
+            </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="mission-home">
+        <div class="row">
+            <div class="mycontainer">
+            <section id="section2">
+                <div class="alignStuff">
+                    <h4 class="h4-norm ourmission"> {{user.student.teamstudent.team}} {{user.mentor.team}} </h4>
+                </div>
+            </section>
+          </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+{% else %}
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+         <a class="navbar-brand" href="{% url 'home:home' %}"><img  src="{% static 'img/sw_logo_3.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto float-right">
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about:about' %}">Our story.</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about:work' %}"> Our work. </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about:team' %}"> Our team.</a>
+              </li>
+               <li class="nav-item">
+              <a class="nav-link" href="{% url 'TeamMap:index' %}"> Team Map. </a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact:contact' %}"> Contact us.</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about:getinvolved' %}"> Get involved.</a>
+
+            </li>
+
+
+          </ul>
+
+
+                  <a class="nav-link" href="{% url 'users:role' %}"> sign up.</a>
+                <a class="nav-link" href="{% url 'login' %}"> login. </a>
+
+      </div>
+    </nav>
+    {% block content1 %}
+    {% endblock %}
+
+
+{% endif %}

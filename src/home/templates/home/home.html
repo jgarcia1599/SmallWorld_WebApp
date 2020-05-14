@@ -1,0 +1,214 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href= "{% static 'css/style3.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Karla" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="scroll-down.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
+
+
+
+
+{% if user.is_authenticated %}
+{% block content %}
+
+<ul>
+    <li><a href="{% url 'meetings:meetings_list' %}"> Meeting Portal</a></li>
+    <li> <a href="{% url 'TeamMap:index' %}"> Team Map </a></li>
+</ul>
+
+
+
+{% endblock %}
+{% else %}
+{% block content1 %}
+ <body>
+
+<!--<div class="container-fluid" id="header-container">-->
+<!--<div id="demo" class="carousel slide" data-ride="carousel">-->
+
+
+ <!--<div class="carousel-inner">-->
+    <!--<div class="carousel-item active">-->
+        <!--<h1 class="purple-h1">SmallWorld KickOff</h1>-->
+        <!--<h4> October 5 - 9-3 - NYU Abu Dhabi</h4>-->
+        <!--<div class="header-img">-->
+            <!--<img src="{% static 'img/kickoff1.png' %}" id="header-pic">-->
+        <!--</div>-->
+        <!--<a>Learn More</a>-->
+        <!--<h4>Register for the KickOff<a href="{% url 'about:gaa' %}">here</a>! </h4>-->
+    <!--</div>-->
+
+
+    <!--<div class="carousel-item">-->
+       <!--<h1 class="purple-h1">GEMS American Academy - Abu Dhabi</h1>-->
+    <!--</div>-->
+    <!--<div class="carousel-item">-->
+       <!--<h1 class="purple-h1">GEMS American Academy - Abu Dhabi</h1>-->
+    <!--</div>-->
+
+  <!--&lt;!&ndash; Left and right controls &ndash;&gt;-->
+  <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+    <!--<span class="carousel-control-prev-icon"></span>-->
+  <!--</a>-->
+  <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+    <!--<span class="carousel-control-next-icon"></span>-->
+  <!--</a>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+
+
+
+    <div class="mission-home-2">
+      <div class="row">
+        <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+                <h1>SmallWorld believes<br/>high school students <br/>can<mark class="red">solve</mark><br/>humanitarian problems.</h1>
+                </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="button-normal"><a class="a-norm" href="{% url 'about:about' %}">EXPLORE HOW.</a></button>
+
+
+
+
+    <!-- Main Content -->
+
+    <div class="mission-home">
+        <div class="row">
+    <div class="mycontainer">
+            <section id="section2">
+                <div class="alignStuff">
+                <h1 class="ourmission">Our mission. </h1>
+                <h4>Increase <br> long-term & effective <br> humanitarian engagement<br> among high school students.</h4>
+            </section>
+          </div>
+        </div>
+      </div>
+
+
+
+<div class="mission-home">
+        <div class="row">
+    <div class="mycontainer">
+            <section id="section2">
+                <div class="alignStuff">
+                <h1 class="ourmission">How we are going to do it.</h1>
+                    <h4>1. Mentorship. <br> 2. Incentives. <br> 3. An innovative online platform. </h4></div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+    <button class="button-normal-purple"> <a class="a-norm" href="{% url 'about:about' %}">LEARN MORE.</a> </button>
+
+ <div class="mission-home-3">
+      <div class="row">
+ <div class="arrow-right"></div>
+    <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+                <h1 class="purple-background-font">Get involved.</h1>
+                </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="mycontainer">
+
+            <h5> Our mission can only be accomplished <br> by building a network of passionate individuals.</h5>
+            <h5> We are looking for:</h5>
+
+            </div>
+    </div>
+
+
+     <div class="mission-home-2">
+        <div class="row">
+    <div class="mycontainer">
+            <section id="section2">
+                <div class="alignStuff">
+                    <h4 class="emph"> High school students <mark class="purple-norm"> to solve. </mark> <a class="a-norm" href="{% url 'about:getinvolved' %}"> >> </a> </h4>
+                </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+     <div class="mission-home-2">
+        <div class="row">
+    <div class="mycontainer">
+            <section id="section2">
+                <div class="alignStuff">
+                    <h4 class="emph"> Undergraduates & professionals <mark class="purple-norm"> to mentor.</mark><a class="a-norm" href="{% url 'about:getinvolved' %}"> >> </a> </h4>
+                </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+     <div class="mission-home-2">
+        <div class="row">
+    <div class="mycontainer">
+            <section id="section2">
+                <div class="alignStuff">
+                    <h4 class="emph">NGOs <mark class="purple-norm"> to partner.</mark><a class="a-norm" href="{% url 'about:getinvolved' %}"> >> </a> </h4>
+                </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+    </body>
+
+
+<footer class="container-fluid">
+      <div class="row">
+        <div class="mycontainer">
+
+            <h6> SmallWorld </h6>
+            <h6> Denver, Colorado - Abu Dhabi, UAE </h6>
+            <h6>contact@smallworld.global</h6>
+
+        </div>
+
+        <div class="footColumn2 col-lg-4 col-md-6 mx-auto">
+
+            <h6> Quick Links</h6>
+            <h6><a class="a-foot" href="{% url 'about:about' %}">Our story.</a> -  <a class="a-foot" href="{% url 'about:work' %}">Our work.</a> - <a class="a-foot" href="{% url 'about:team' %}">Our Team.</a> - <a class="a-foot" href="{% url 'about:getinvolved' %}">Get Involved.</a> </h6>
+
+<div class="row-icons">
+                     <a href="https://www.facebook.com/SmallWorldGlobal/" class="fa fa-facebook"></a>
+                     <a href="https://twitter.com/smallworldglob1" class="fa fa-twitter"></a>
+                     <a href="https://www.instagram.com/smallworld.global/" class="fa fa-instagram"></a>
+              </div>
+        </div>
+      </div>
+    </footer>
+
+
+</html>
+
+{% endblock %}
+{% endif %} <!--if authenticated-->
+
+
+
+
+

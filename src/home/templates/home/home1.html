@@ -1,0 +1,144 @@
+{% endif %} <!-- if team -->
+
+    {% elif user.is_mentor %}
+
+        {% if user.mentor.team %}
+
+
+    <div class="problem">
+    {% if user.mentor.team.problem_done == True %}
+        <div class="problem_final">
+            {{user.mentor.team.problem}}
+        </div>
+    {% elif user.mentor.team.problem_progress == True %}
+
+    <div class="progress">
+        <h1> 1. Identify a humanitarian problem.</h1>
+    </div>
+     <div class="alignStuff">
+         <button class="button-normal"><a href="{% url 'meetings:meetings_list' %}">Keep working>></a></button
+     </div>
+
+      <!--  <div class="problem_work">
+            <div class="header_vid">
+                <h1> 1. Identify a humanitarian problem. </h1>
+                <video width="600" height="400" controls><source src="media/what_is_smallworld.mp4" type="video/mp4"></video>
+            </div>
+            <div class="text_tips">
+                <p> Use the space below to brainstorm problems in your community.</p>
+                <p> Draft a problem statement. Your mentor will submit the official version. </p>
+                <p> Go to <a href="#"> Ideas </a> to learn about problems and solutions. </p>
+                <p> Remember: who, what, where, when.</p>
+                <!--For mentors- Problem Statement submit-->
+            <!--</div>-->
+        <!--</div>&ndash;&gt;-->
+    {% else %}
+        <div class="not_started">
+            <h1> 1. Identify a humanitarian problem. </h1>
+        </div>
+    {% endif %}
+</div>
+
+<div class="become_educated">
+    {% if user.mentor.team.become_educated_done == True %}
+    {{user.mentor.team.become_educated}}
+     {% elif user.mentor.team.become_educated_progress == True %}
+    <div class="become_educated_work">
+        <div class="header_vid">
+            <h1> 2. Become educated about causes and effects. </h1>
+            <video width="600" height="400" controls><source src="media/what_is_smallworld.mp4" type="video/mp4"></video>
+        </div>
+        <div class="text_tips">
+            <p> Use the space below to brainstorm problems in your community.</p>
+            <p> Go to <a href="#"> Ideas </a> to learn about problems and solutions. </p>
+            <p> Remember: who, what, where, when.</p>
+        </div>
+
+    </div>
+    {% else %}
+    <div class="not_started">
+    <h1> 2. Become educated about causes and effects.  </h1>
+    </div>
+    {% endif %}
+</div>
+
+<div class="solution">
+    {% if user.mentor.team.solution_done == True %}
+        {{user.mentor.team.solution}}
+    {% elif user.mentor.team.solution_progress == True %}
+    <div class="solution_work">
+        <div class="header_vid">
+            <h1> 3. Form a solution and devise a way to measure your results. </h1>
+            <video width="600" height="400" controls><source src="media/what_is_smallworld.mp4" type="video/mp4"></video>
+        </div>
+        <div class="text_tips">
+            <p> Use the space below to brainstorm problems in your community.</p>
+            <p> Go to <a href="#"> Ideas </a> to learn about problems and solutions. </p>
+            <p> Remember: who, what, where, when.</p>
+        </div>
+    </div>
+    {% else %}
+    <div class="not_started">
+    <h1> 3. Form a solution and devise a way to measure your results. </h1>
+    </div>
+    {% endif %}
+</div>
+
+<div class="action_blueprint">
+    {% if user.mentor.team.action_blueprint_done == True %}
+    {{user.mentor.team.action_blueprint}}
+    {% elif user.mentor.team.action_blueprint_progress == True %}
+    <div class="action_blueprint_work">
+        <div class="header_vid">
+            <h1> 4. Create an Action Blueprint. </h1>
+            <video width="600" height="400" controls><source src="media/what_is_smallworld.mp4" type="video/mp4"></video>
+        </div>
+        <div class="text_tips">
+            <p> Use the space below to brainstorm problems in your community.</p>
+            <p> Go to <a href="#"> Ideas </a> to learn about problems and solutions. </p>
+            <p> Remember: who, what, where, when.</p>
+        </div>
+    </div>
+    {% else %}
+    <div class="not_started">
+    <h1> 4. Create an Action Blueprint.</h1>
+    </div>
+    {% endif %}
+</div>
+
+<div class="solution_results">
+     {% if user.mentor.team.solution_results_done == True %}
+    {{user.mentor.team.solution_results}}
+     {% elif user.mentor.team.solution_results_progress == True %}
+    <div class="solution_results_work">
+        <div class="header_vid">
+            <h1> 5. Solve your problem and measure the results. </h1>
+            <video width="600" height="400" controls><source src="media/what_is_smallworld.mp4" type="video/mp4"></video>
+        </div>
+        <div class="text_tips">
+            <p> Use the space below to brainstorm problems in your community.</p>
+            <p> Go to <a href="#"> Ideas </a> to learn about problems and solutions. </p>
+            <p> Remember: who, what, where, when.</p>
+        </div>
+    </div>
+    {% else %}
+    <div class="not_started">
+    <h1> 5. Solve your problem and measure the results.</h1>
+    </div>
+    {% endif %}
+</div>
+
+{% elif %}
+
+            <div class="row">
+                <div class="mycontainer">
+                    <div class="alignStuff">
+                        <a href="{% url 'TeamMap:team-add' %}">Create a Team!</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+
+    {% endif %} <!-- if mentor -->
+<!--#always validate your html-->

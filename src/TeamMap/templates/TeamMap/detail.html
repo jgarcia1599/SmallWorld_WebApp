@@ -1,0 +1,112 @@
+<!--Team Profile public?-->
+
+{% extends 'home/base.html' %}
+{% block title %}Benchmark Details{% endblock %}
+{% block teams_active %}active{% endblock %}
+
+{% block content %}
+
+<div class="mission-home-2">
+      <div class="row">
+    <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+                <h1>{{team.name}}</h1>
+                </div>
+            </section>
+          </div>
+
+        </div>
+      </div>
+
+ <div class="row">
+    <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+    <img src="{{ team.team_logo.url }} " class="img-responsive" >
+<h5>{{team.location}}</h5>
+<h5>{{team.mentor}}</h5>
+<h5>{{team.student_set}}</h5>
+                    {% if team.problem %}
+                    {% if team.become_educated %}
+                    {% if team.solution %}
+                    {% if team.action_blueprint %}
+                    {% if team.solution_results %}
+                        <h5>{{team.problem}}</h5>
+                        <h5>{{team.become_educated}}</h5>
+                        <h5>{{team.solution}}</h5>
+                        <h5>{{team.action_blueprint}}</h5>
+                        <h5>{{team.solution_results}}</h5>
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                </div>
+           </section>
+    </div>
+ </div>
+</div>
+
+<!--Only students not on teams can see Join button-->
+
+ {% if user.is_student %}
+    {% if not user.student.teamstudent %}
+        {% if team.accepting_members == True  %}
+        <div class="row">
+            <div class="mycontainer">
+            <button class="button-normal"><a href="{% url 'TeamMap:team_student_create' team.id %}">Join Now</a></button>
+            </div>
+        </div>
+        {% endif %}
+    {% else %}
+    Since you have already joined a team, you cannot join this team.
+    {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block content1 %}
+
+<div class="mission-home-2">
+      <div class="row">
+    <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+                <h1>{{team.name}}</h1>
+                </div>
+            </section>
+          </div>
+
+        </div>
+      </div>
+
+ <div class="row">
+    <div class="mycontainer">
+           <section id="section3">
+                <div class="alignStuff">
+    <img src="{{ team.team_logo.url }} " class="img-responsive" >
+<h5>{{team.location}}</h5>
+<h5>{{team.mentor}}</h5>
+<h5>{{team.student_set}}</h5>
+                    {% if team.problem %}
+                    {% if team.become_educated %}
+                    {% if team.solution %}
+                    {% if team.action_blueprint %}
+                    {% if team.solution_results %}
+                        <h5>{{team.problem}}</h5>
+                        <h5>{{team.become_educated}}</h5>
+                        <h5>{{team.solution}}</h5>
+                        <h5>{{team.action_blueprint}}</h5>
+                        <h5>{{team.solution_results}}</h5>
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                </div>
+           </section>
+    </div>
+ </div>
+</div>
+{% endblock %}
+

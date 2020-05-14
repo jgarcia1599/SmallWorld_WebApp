@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+{% block title %}{{meeting.name}}{% endblock %}
+{% block teams_active %}active{% endblock %}
+
+
+{% block content %}
+
+<div class="meetinginfoScreen">
+
+<h1>{{meeting.name}}</h1>
+
+
+{% if user.is_student %}
+
+    {% if student_meeting %}
+
+    <a href="{% url 'meetings:student_meeting_update' student_meeting.id %}"> In progress</a>
+
+    {% else %}
+
+    <a href="{% url 'meetings:student_meeting_create' meeting.id %}"> Not started </a>
+<!--need an else for complete which will be the html/css pretty part of the profile-->
+
+    {% endif %}
+    {% else %}
+
+    {% if mentor_meeting %}
+    <a href="{% url 'meetings:mentor_meeting_update' mentor_meeting.id %}">In progress</a>
+
+
+    {% else %}
+    <a href="{% url 'meetings:mentor_meeting_create' meeting.id %}">Not started </a>
+
+    {% endif %}
+
+    {% endif %}
+
+
+{% endblock %}
